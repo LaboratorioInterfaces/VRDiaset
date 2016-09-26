@@ -3,6 +3,8 @@ using System.Collections;
 
 public class MachineData : MonoBehaviour {
 
+	public DataController jsonData;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -19,5 +21,7 @@ public class MachineData : MonoBehaviour {
 
 	public void setUpData(){
 		Debug.Log ("Aqui debe poner los datos de la conexion en la session");
+		//StartCoroutine (DataController.getData ());
+
 	}
 }

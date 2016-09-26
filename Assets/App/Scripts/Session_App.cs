@@ -7,8 +7,9 @@ using System.Collections.Generic;
 
 public static class Session_App{
 	
-	public static int maquinaId = 0;
-
 	//diccionario
 	public static Dictionary<string,string> values = new Dictionary<string, string>();
+
+	public static int maquinaId = 0;
+	public static Machine activeMachine;
 }
