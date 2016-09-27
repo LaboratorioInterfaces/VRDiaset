@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
-using LitJson;
 
 public class DataController : MonoBehaviour {
 
+	public TablaController tabla;
+
 	// Use this for initialization
 	void Start () {
-		StartCoroutine (getData ());
+		//StartCoroutine (getData ());
 
 	}
 	
@@ -16,34 +17,28 @@ public class DataController : MonoBehaviour {
 	}
 
 	public IEnumerator getData(){
+		
 		string dataMachineURL = "http://201.134.41.123/display.php";
-		//string jsonDataString = "{\"idCaptura\": 150,\"block\": \"uno\",\"execution\":\"dos\" ,\"mode\":\"tres\"}";
-		Machine m = new Machine();
+	//	string jsonDataString = "{\"idCaptura\": 150,\"block\": \"uno\",\"execution\":\"dos\" ,\"mode\":\"tres\"}";
+		string jsonDataString = "";
 
 		WWW data_get = new WWW (dataMachineURL);
 		yield return data_get;
 
 		if(data_get.error != null){
 			Debug.Log ("Error getting data: " +data_get.error);
-		}else{
-			//jsonDataString = data_get.text;
-			//jsonDataString = "";
-			Debug.Log(data_get.text);
-			m = Machine.CreateFromJson (data_get.text);
-			//Debug.Log (jsonDataString);
+		}else{			
+			Debug.Log (data_get.text);
+			jsonDataString = data_get.text.Substring(1,data_get.text.Length-2);
 		}
 
 		//Assign jsonDataString to Session variable.
-		//machine = JsonUtility.FromJson<Machine>(jsonDataString);
-		//string jsonTest = JsonUtility.ToJson(jsonDataString);
+		Machine m = Machine.CreateFromJson(jsonDataString);
+		Session_App.activeMachine = m;
+		Debug.Log ("activeMachine Session: " +Session_App.activeMachine.idCaptura);
+		Debug.Log ("activeMachine block: "+Session_App.activeMachine.block);
 
-
-		Debug.Log ("------------");
-
-		Debug.Log("idCaptura: " +m.idCaptura);
-		Debug.Log("block: " +m.block);
-		Debug.Log("execution: " +m.execution);
-		Debug.Log("mode: " +m.mode);
-		//Debug.Log("mode: " +Session_App.activeMachine.mode);
-	}
+		//Assign Value to Variable.
+		tabla.assignValue();
+	}	
 }

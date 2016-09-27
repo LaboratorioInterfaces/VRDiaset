@@ -44,15 +44,41 @@ public class TablaController : MonoBehaviour {
 			GameObject go = t.gameObject;
 			VariableController vc = go.GetComponent<VariableController> ();
 
-			string vcString = vc.getValueString();
-			bool checkVar = Session_App.values.ContainsKey (vcString);
+			//Debug.Log (vc.getValueString());
+			//string vcString = vc.getValueString();
 
-			Debug.Log (checkVar);
-			if(checkVar){
-				string valueChecked = Session_App.values [vcString];
-				Debug.Log (valueChecked);
-				vc.setValueToLabel (valueChecked);
+			if (vc.getValueString() == "Idcaptura") {
+				Debug.Log ("idcaptura");
+				string value = Session_App.activeMachine.idCaptura;
+				Debug.Log (value);
+				vc.setValueToLabel(value);
+			}else if(vc.getValueString() == "Mode"){
+				Debug.Log ("mode");
+				string value = Session_App.activeMachine.mode;
+				Debug.Log (value);
+				vc.setValueToLabel(value);
+			}else if(vc.getValueString() == "Block"){
+				Debug.Log ("block");
+				string value = Session_App.activeMachine.block;
+				Debug.Log (value);
+				vc.setValueToLabel(value);
+			}else if(vc.getValueString() == "Execution"){
+				Debug.Log ("execution");
+				string value = Session_App.activeMachine.execution;
+				Debug.Log (value);
+				vc.setValueToLabel(value);
 			}
+
+
+
+			//bool checkVar = Session_App.values.ContainsKey (vcString);
+
+			//Debug.Log (checkVar);
+			//if(Session_App.activeMachine){
+				//string valueChecked = Session_App.values [vcString];
+				//Debug.Log (valueChecked);
+				//vc.setValueToLabel (valueChecked);
+			//}
 		}
 	}
 }

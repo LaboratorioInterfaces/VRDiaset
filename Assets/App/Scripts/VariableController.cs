@@ -6,8 +6,10 @@ public class VariableController : MonoBehaviour {
 	public UILabel value;
 	public enum VariableList{
 		NONE=0,
-		Xcom=1,
-		Yact=2,
+		Idcaptura=1,
+		Execution=2,
+		Block=3,
+		Mode=4,
 	}
 
 	public VariableList variable;
@@ -28,7 +30,7 @@ public class VariableController : MonoBehaviour {
 
 	public string getValueString(){
 		string stringValue = Enum.GetName(typeof(VariableList),((int)variable));
-		Debug.Log ("+++"+stringValue);
+		//Debug.Log ("+++"+stringValue);
 		return stringValue;
 	}
 

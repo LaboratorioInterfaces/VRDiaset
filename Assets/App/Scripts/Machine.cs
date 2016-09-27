@@ -11,7 +11,7 @@ public class Machine {
 	public string mode { get; set;}
 */
 
-	public int idCaptura;
+	public string idCaptura;
 	public string block;
 	public string execution;
 	public string mode;
