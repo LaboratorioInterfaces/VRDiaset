@@ -3,6 +3,7 @@ using System.Collections;
 
 public class ColliderManager : MonoBehaviour {
 	public GameObject target;
+	public string collidedObject ="";
 	// Use this for initialization
 	void Start () {
 		target.SetActive (false);
@@ -17,9 +18,11 @@ public class ColliderManager : MonoBehaviour {
 		Debug.Log("OnCollisionExit");
 		MachineData md = collisionInfo.gameObject.GetComponent<MachineData> ();
 		if(md!=null){			
-			target.SetActive (false);
 			//Detiene rutina de conexion
 			md.cleanData ();
+			target.SetActive (false);
+
+
 		}
 	}
 
@@ -27,8 +30,10 @@ public class ColliderManager : MonoBehaviour {
 		Debug.Log("OnCollisionEnter");
 		MachineData md = collisionInfo.gameObject.GetComponent<MachineData> ();
 		if(md!=null){
-			md.setUpData();
 			//Inicia rutina de conexion
+			Debug.Log(collisionInfo.gameObject.name);
+			collidedObject = collisionInfo.gameObject.name;
+			md.setUpData(collidedObject);
 			target.SetActive (true);
 		}
 	}

@@ -16,10 +16,18 @@ public class DataController : MonoBehaviour {
 	
 	}
 
-	public IEnumerator getData(){
-		
-		string dataMachineURL = "http://201.134.41.123/display.php";
-	//	string jsonDataString = "{\"idCaptura\": 150,\"block\": \"uno\",\"execution\":\"dos\" ,\"mode\":\"tres\"}";
+	public IEnumerator getData(string machine){
+		string dataMachineURL = "";
+
+		if (machine == "MachinePrefab") {
+			Debug.Log ("Yes");
+			dataMachineURL = "http://201.134.41.123/display.php?machine=01";
+		} else {
+			Debug.Log ("none");
+			//dataMachineURL = "http://201.134.41.123/display.php";
+		}
+
+		//string jsonDataString = "{\"idCaptura\": 150,\"block\": \"uno\",\"execution\":\"dos\" ,\"mode\":\"tres\"}";
 		string jsonDataString = "";
 
 		WWW data_get = new WWW (dataMachineURL);
