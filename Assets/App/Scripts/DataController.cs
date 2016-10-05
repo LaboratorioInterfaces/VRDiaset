@@ -21,7 +21,7 @@ public class DataController : MonoBehaviour {
 
 		if (machine == "MachinePrefab") {
 			Debug.Log ("Yes");
-			dataMachineURL = "http://201.134.41.123/display.php?machine=01";
+			dataMachineURL = "http://201.134.41.123/display.php?table=02";
 		} else {
 			Debug.Log ("none");
 			//dataMachineURL = "http://201.134.41.123/display.php";

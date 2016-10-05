@@ -25,6 +25,7 @@ public class VariableController : MonoBehaviour {
 	}
 
 	public void setValueToLabel(string val){
+		value.text = " ";
 		value.text = val;
 	}
 
