@@ -165,8 +165,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/Interfaces2/developing/VRDiaset/laboratorio.keystore
-  AndroidKeyaliasName: laboratorio
+  AndroidKeystoreName: C:/Users/Interfaces2/Desktop/VRDiaset/interfaces.keystore
+  AndroidKeyaliasName: interfaces
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   androidEnableBanner: 1
