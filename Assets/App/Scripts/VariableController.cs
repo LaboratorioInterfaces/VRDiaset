@@ -6,10 +6,14 @@ public class VariableController : MonoBehaviour {
 	public UILabel value;
 	public enum VariableList{
 		NONE=0,
-		Idcaptura=1,
-		Execution=2,
-		Block=3,
-		Mode=4,
+		Machine=1,
+		RegisterDate=2,
+		Xp=3,
+		Yp=4,
+		Zp=5,
+		Xload=6,
+		Yload=7,
+		Zload=8,
 	}
 
 	public VariableList variable;

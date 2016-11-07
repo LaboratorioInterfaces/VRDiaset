@@ -21,7 +21,7 @@ public class DataController : MonoBehaviour {
 
 		if (machine == "MachinePrefab") {
 			Debug.Log ("Yes");
-			dataMachineURL = "http://201.134.41.123/agent/display.php?table=02";
+			dataMachineURL = "http://201.134.41.123/agent/display.php?table=03";
 		} else {
 			Debug.Log ("none");
 			//dataMachineURL = "http://201.134.41.123/display.php";
@@ -43,8 +43,8 @@ public class DataController : MonoBehaviour {
 		//Assign jsonDataString to Session variable.
 		Machine m = Machine.CreateFromJson(jsonDataString);
 		Session_App.activeMachine = m;
-		Debug.Log ("activeMachine Session: " +Session_App.activeMachine.idCaptura);
-		Debug.Log ("activeMachine block: "+Session_App.activeMachine.block);
+		Debug.Log ("activeMachine Session: " +Session_App.activeMachine.MachineID);
+		//Debug.Log ("activeMachine block: "+Session_App.activeMachine.block);
 
 		//Assign Value to Variable.
 		tabla.assignValue();

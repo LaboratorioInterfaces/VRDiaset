@@ -47,28 +47,48 @@ public class TablaController : MonoBehaviour {
 			//Debug.Log (vc.getValueString());
 			//string vcString = vc.getValueString();
 
-			if (vc.getValueString() == "Idcaptura") {
-				Debug.Log ("idcaptura");
-				string value = Session_App.activeMachine.idCaptura;
+			// Get the name of the object and asign the value to it
+			if (vc.getValueString () == "Machine") {
+				Debug.Log ("Machine");
+				string value = Session_App.activeMachine.MachineID;
 				Debug.Log (value);
-				vc.setValueToLabel(value);
-			}else if(vc.getValueString() == "Mode"){
-				Debug.Log ("mode");
-				string value = Session_App.activeMachine.mode;
+				vc.setValueToLabel (value);
+			} else if (vc.getValueString () == "RegisterDate") {
+				Debug.Log ("RegisterDate");
+				string value = Session_App.activeMachine.RegisterDate;
 				Debug.Log (value);
-				vc.setValueToLabel(value);
-			}else if(vc.getValueString() == "Block"){
-				Debug.Log ("block");
-				string value = Session_App.activeMachine.block;
+				vc.setValueToLabel (value);
+			} else if (vc.getValueString () == "Xp") {
+				Debug.Log ("Xp");
+				string value = Session_App.activeMachine.Xp;
 				Debug.Log (value);
-				vc.setValueToLabel(value);
-			}else if(vc.getValueString() == "Execution"){
-				Debug.Log ("execution");
-				string value = Session_App.activeMachine.execution;
+				vc.setValueToLabel (value);
+			} else if (vc.getValueString () == "Yp") {
+				Debug.Log ("Yp");
+				string value = Session_App.activeMachine.Yp;
 				Debug.Log (value);
-				vc.setValueToLabel(value);
+				vc.setValueToLabel (value);
+			} else if (vc.getValueString () == "Zp") {
+				Debug.Log ("Zp");
+				string value = Session_App.activeMachine.Zp;
+				Debug.Log (value);
+				vc.setValueToLabel (value);
+			} else if (vc.getValueString () == "Xload") {
+				Debug.Log ("Zp");
+				string value = Session_App.activeMachine.Zp;
+				Debug.Log (value);
+				vc.setValueToLabel (value);
+			} else if (vc.getValueString () == "Yload") {
+				Debug.Log ("Yload");
+				string value = Session_App.activeMachine.Yload;
+				Debug.Log (value);
+				vc.setValueToLabel (value);
+			} else if (vc.getValueString () == "Zload") {
+				Debug.Log ("Zload");
+				string value = Session_App.activeMachine.Zload;
+				Debug.Log (value);
+				vc.setValueToLabel (value);
 			}
-
 
 
 			//bool checkVar = Session_App.values.ContainsKey (vcString);
